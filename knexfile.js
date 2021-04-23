@@ -24,5 +24,9 @@ const sharedConfig = {
       ...sharedConfig,
       connection: { filename: './data/waterplants.db3' },
     },
+    production: {
+      ...sharedConfig,
+      connection: { filename: './data/waterplants.db3' },
+    }
   }
   
