@@ -2,8 +2,6 @@ const router = require('express').Router();
 const restricted = require('../auth/auth-middleware.js');
 const plantModel = require('../plants/plant-model.js');
 
-
-
 router.get('/:plant_id', restricted,  async (req, res) => {
     try{
         const plant = await plantModel.findById(req.params.plant_id);
