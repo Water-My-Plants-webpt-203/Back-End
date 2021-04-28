@@ -85,6 +85,10 @@ Sample Response:
 
 ### Plants Endpoints: (Note: Requires auth token to be passed as bearer token)
 
+NOTE: When sending image of a plant to the server the file upload input field should be named "plantImg". The uploaded image will be saved on the server and can be accessed from the front end using base url: https://water-my-plants-203.herokuapp.com/images/ + image value of the plant record.<br/>
+For instance if the image value for plant with plant_id 2 is "6/default1619575024780.jpg" the image src value will be "https://water-my-plants-203.herokuapp.com/images/6/default1619575024780.jpg".<br/>
+If no file is sent the default image src value should be "https://water-my-plants-203.herokuapp.com/images/default/default.jpg" where "default/default.jpg" is the default image value of a specified plant record.
+
 - ### 1 :
   - /plants/:plant_id - retrieves plant information based on specified plant_id
   - Method: GET
@@ -92,12 +96,12 @@ Sample Response:
 
 ```js
 {
-  "plant_id": 2,
-  "nickname": "lotus",
-  "species": "flower",
-  "h2oFrequency": 3,
-  "image": "Lotusimage",
-  "user_id": 6
+    "plant_id": 2,
+    "nickname": "Updated Lotus",
+    "species": "Updated Species",
+    "h2oFrequency": 11,
+    "image": "6/lotus1619579242697.jpg",
+    "user_id": 6
 }
 ```
 
@@ -109,19 +113,19 @@ Sample Response:
 ```js
 [
   {
-    plant_id: 2,
-    nickname: "lotus",
-    species: "flower",
-    h2oFrequency: 3,
-    image: "Lotusimage",
+    plant_id: 9,
+    nickname: "Test Nickname",
+    species: "Test Species",
+    h2oFrequency: 4,
+    image: "6/default1619575024780.jpg",
     user_id: 6,
   },
   {
-    plant_id: 4,
-    nickname: "Jasmin",
-    species: "flower",
-    h2oFrequency: 11,
-    image: "JASMINimage",
+    plant_id: 10,
+    nickname: "Test Nickname 1",
+    species: "Test Species 1",
+    h2oFrequency: 5,
+    image: "default/default.jpg",
     user_id: 6,
   },
 ];
@@ -136,8 +140,7 @@ Sample Response:
 {
   "nickname": "Jasmin",
   "species": "flower",
-  "h2oFrequency": 11,
-  "image": "JASMINimage"
+  "h2oFrequency": 11
 }
 ```
 
@@ -158,8 +161,7 @@ Sample Response:
 {
   "nickname": "JasminE",
   "species": "flower",
-  "h2oFrequency": 20,
-  "image": "JASMINimage"
+  "h2oFrequency": 20
 }
 ```
 
