@@ -32,9 +32,9 @@ router.post('/:user_id/plants', restricted, async (req, res) => {
             const fileExt = file.name.split('.').pop();
             console.log(fileExt);
             if(fileExt.toLowerCase() == "jpeg" || fileExt.toLowerCase() == "jpg"){
-                let dirPath = path.dirname(require.main.filename) + '\\api\\images\\' +user_id;
+                let dirPath = path.dirname(require.main.filename) + '//api//images//' +user_id;
                 let imageName = file.name.substr(0, file.name.lastIndexOf('.')) + Date.now()+ '.' + fileExt;
-                let imageLocation = dirPath + '\\' + imageName;
+                let imageLocation = dirPath + '//' + imageName;
                 if(fs.existsSync(dirPath)){
                     if(file){
                         file.mv(imageLocation);
